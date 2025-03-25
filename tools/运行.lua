@@ -23,11 +23,11 @@ if not fs.exists(root / 'ObjMap.w3x') then
     print('地图不存在', root / 'ObjMap.w3x')
     return
 end
-if get_debugger() then
+-- if get_debugger() then
     --command = command .. ' -debugger 4278'
-end
+-- end
 subprocess.spawn {
-    ydwe / 'ydwe.exe',
-    '-war3',
+    ydwe / 'bin' / 'ydweconfig.exe',
+    '-launchwar3',
     '-loadfile', root / 'ObjMap.w3x',
 }
