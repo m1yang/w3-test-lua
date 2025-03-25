@@ -1,0 +1,52 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch",
+            "type": "lua",
+            "request": "attach",
+            "stopOnEntry": true,
+            "ip": "127.0.0.1",
+            "port": 4279,
+            "preLaunchTask": "运行",
+            "sourceCoding": "utf8",
+            "sourceMaps": [
+                [
+                    "scripts\\ac\\",
+                    "${workspaceRoot}\\w3x2lni\\plugin\\import\\scripts\\ac\\"
+                ],
+                [
+                    "scripts\\",
+                    "${workspaceRoot}\\scripts\\"
+                ],
+                [
+                    "lua\\",
+                    "${workspaceRoot}\\map\\lua\\"
+                ]
+            ]
+        },
+        {
+            "name": "Attach",
+            "type": "lua",
+            "request": "attach",
+            "stopOnEntry": true,
+            "ip": "127.0.0.1",
+            "port": 4279,
+            "sourceCoding": "utf8",
+            "sourceMaps": [
+                [
+                    "scripts\\ac\\",
+                    "${workspaceRoot}\\w3x2lni\\plugin\\import\\scripts\\ac\\"
+                ],
+                [
+                    "scripts\\",
+                    "${workspaceRoot}\\scripts\\"
+                ],
+                [
+                    "lua\\",
+                    "${workspaceRoot}\\map\\lua\\"
+                ]
+            ]
+        }
+    ]
+}

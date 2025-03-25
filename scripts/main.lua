@@ -1,0 +1,2 @@
+require 'skill'
+require 'game'
