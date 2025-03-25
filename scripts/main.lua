@@ -1,2 +1,1 @@
-require 'skill'
-require 'game'
+print("hello")

@@ -3,125 +3,109 @@
     // for the documentation about the tasks.json format
     "version": "2.0.0",
     "type": "shell",
-    "tasks": [
-        {
-            "label": "运行",
-            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w3x2lni-lua.exe\"",
-            "args": [
-                ".\\tools\\运行.lua",
-                "${workspaceRoot}"
-            ]
-        },
-        {
-            "label": "配置",
-            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w3x2lni-lua.exe\"",
-            "args": [
-                ".\\tools\\配置.lua",
-                "${workspaceRoot}"
-            ]
-        },
-        {
-            "label": "语法检查",
-            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w3x2lni-lua.exe\"",
-            "args": [
-                ".\\tools\\语法检查.lua",
-                "${workspaceRoot}"
-            ],
-            "problemMatcher": {
-                "owner": "lua",
-                "fileLocation": [
-                    "absolute"
-                ],
-                "pattern": {
-                    "regexp": "^(.*):(\\d+):\\s+(.*)$",
-                    "file": 1,
-                    "line": 2,
-                    "message": 3
-                }
-            }
-        },
-        {
-            "label": "Obj",
-            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/w2l.exe\"",
-            "presentation": {
-                "echo": false,
-                "reveal": "always",
-                "focus": true,
-                "panel": "new"
-            },
-            "args": [
-                "obj",
-                "${workspaceRoot}",
-                "${workspaceRoot}/ObjMap.w3x"
-            ]
-        },
-        {
-            "label": "Lni",
-            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/w2l.exe\"",
-            "presentation": {
-                "echo": false,
-                "reveal": "always",
-                "focus": true,
-                "panel": "new"
-            },
-            "args": [
-                "lni",
-                "${workspaceRoot}/ObjMap.w3x",
-                "${workspaceRoot}"
-            ]
-        },
-        {
-            "label": "Slk",
-            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/w2l.exe\"",
-            "presentation": {
-                "echo": false,
-                "reveal": "always",
-                "focus": true,
-                "panel": "new"
-            },
-            "args": [
-                "slk",
-                "${workspaceRoot}",
-                "${workspaceRoot}/SlkMap.w3x"
-            ]
-        },
-        {
-            "label": "日志",
-            "command": "start ${workspaceRoot}/tools/w3x2lni/log/report.log",
-            "presentation": {
-                "echo": false,
-                "reveal": "always",
-                "focus": true,
-                "panel": "new"
-            },
-            "args": []
-        },
-        {
-            "label": "🔍",
-            "command": "chcp 65001 && \"${workspaceRoot}/tools/w3x2lni/bin/w3x2lni-lua.exe\" -e \"package.cpath=package.cpath..';'..[[${workspaceRoot}/tools/?.dll]]\"",
-            "args": [
-                ".\\tools\\语法检查.lua",
-                "${workspaceRoot}",
-                "--watch"
-            ],
-            "isBackground": true,
-            "problemMatcher": {
-                "owner": "lua",
-                "fileLocation": [
-                    "absolute"
-                ],
-                "pattern": {
-                    "regexp": "^(.*):(\\d+):\\s+(.*)$",
-                    "file": 1,
-                    "line": 2,
-                    "message": 3
-                },
-                "background": {
-                    "activeOnStart": true,
-                    "beginsPattern": "\\[Watch\\] File change detected\\.",
-                    "endsPattern": "\\[Watch\\] Complete\\."
-                }
-            }
+    "windows": {
+      "options": {
+        "shell": {
+          "executable": "powershell.exe",
+          "args": [
+            "-NoProfile",
+            "-Command",
+            "[Console]::OutputEncoding = [System.Text.Encoding]::UTF8;",
+          ]
         }
+      }
+    },
+    "tasks": [
+      {
+        "label": "运行",
+        "command": "${workspaceRoot}/tools/w3x2lni/bin/w3x2lni-lua.exe",
+        "args": ["./tools/运行.lua", "${workspaceRoot}"]
+      },
+      {
+        "label": "配置",
+        "command": "${workspaceRoot}/tools/w3x2lni/bin/w3x2lni-lua.exe",
+        "presentation": {
+          "close": true,
+        },
+        "args": ["./tools/配置.lua", "${workspaceRoot}"]
+      },
+      {
+        "label": "地图",
+        "command": "${workspaceRoot}/tools/w3x2lni/bin/w3x2lni-lua.exe",
+        "presentation": {
+          "close": true,
+        },
+        "args": ["./tools/地图.lua", "${workspaceRoot}"]
+      },
+      {
+        "label": "语法检查",
+        "command": "${workspaceRoot}/tools/w3x2lni/bin/w3x2lni-lua.exe",
+        "args": ["./tools/语法检查.lua", "${workspaceRoot}"],
+        "problemMatcher": {
+          "owner": "lua",
+          "fileLocation": ["absolute"],
+          "pattern": {
+            "regexp": "^(.*):(\\d+):\\s+(.*)$",
+            "file": 1,
+            "line": 2,
+            "message": 3
+          }
+        }
+      },
+      {
+        "label": "Obj",
+        "command": "${workspaceRoot}/tools/w3x2lni/w2l.exe",
+        "presentation": {
+          "echo": false,
+          "panel": "shared",
+          "clear": true,
+        },
+        "args": ["obj", "${workspaceRoot}", "${workspaceRoot}/ObjMap.w3x"]
+      },
+      {
+        "label": "Lni",
+        "command": "${workspaceRoot}/tools/w3x2lni/w2l.exe",
+        "hide": true,
+        "args": ["lni", "${workspaceRoot}/ObjMap.w3x", "${workspaceRoot}"]
+      },
+      {
+        "label": "Slk",
+        "command": "${workspaceRoot}/tools/w3x2lni/w2l.exe",
+        "args": ["slk", "${workspaceRoot}", "${workspaceRoot}/SlkMap.w3x"]
+      },
+      {
+        "label": "日志",
+        "command": "start ${workspaceRoot}/tools/w3x2lni/log/report.log",
+        "presentation": {
+          "echo": false,
+          "reveal": "always",
+          "focus": true,
+          "close": true,
+          "panel": "new"
+        },
+        "args": []
+      },
+      {
+        "label": "🔍",
+        "command": "${workspaceRoot}/tools/w3x2lni/bin/w3x2lni-lua.exe -e \"package.cpath=package.cpath..';'..[[${workspaceRoot}/tools/?.dll]]\"",
+        "args": ["./tools/语法检查.lua", "${workspaceRoot}", "--watch"],
+        "isBackground": true,
+        "problemMatcher": {
+          "owner": "lua",
+          "fileLocation": ["absolute"],
+          "pattern": {
+            "regexp": "^(.*):(\\d+):\\s+(.*)$",
+            "file": 1,
+            "line": 2,
+            "message": 3
+          },
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "\\[Watch\\] File change detected\\.",
+            "endsPattern": "\\[Watch\\] Complete\\."
+          }
+        }
+      }
     ]
-}
+  }
+  
