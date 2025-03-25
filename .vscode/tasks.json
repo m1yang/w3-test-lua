@@ -22,15 +22,14 @@
       "presentation": {
         "close": true
       },
-      "args": ["run", "-launchwar3", "-loadfile", "${workspaceRoot}/ObjMap.w3x"]
+      "args": ["-launchwar3", "-loadfile", "${workspaceRoot}/ObjMap.w3x"]
     },
     {
       "label": "配置",
       "command": "${workspaceRoot}/tools/we.bat",
       "presentation": {
         "close": true
-      },
-      "args": ["run"]
+      }
     },
     {
       "label": "地图",
@@ -38,7 +37,7 @@
       "presentation": {
         "close": true
       },
-      "args": ["open", "-loadfile", "${workspaceRoot}/.w3x"]
+      "args": ["-loadfile", "${workspaceRoot}/.w3x"]
     },
     {
       "label": "Obj",
