@@ -6,8 +6,7 @@
             "type": "lua",
             "request": "attach",
             "stopOnEntry": true,
-            "ip": "127.0.0.1",
-            "port": 4279,
+            "address": "127.0.0.1:4279",
             "preLaunchTask": "运行",
             "sourceCoding": "utf8",
             "sourceMaps": [
@@ -30,8 +29,7 @@
             "type": "lua",
             "request": "attach",
             "stopOnEntry": true,
-            "ip": "127.0.0.1",
-            "port": 4279,
+            "address": "127.0.0.1:4279",
             "sourceCoding": "utf8",
             "sourceMaps": [
                 [

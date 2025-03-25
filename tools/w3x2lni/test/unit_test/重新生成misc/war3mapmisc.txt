@@ -1,2 +1,0 @@
-[Misc]
-AgiAttackSpeedBonus=0.012
