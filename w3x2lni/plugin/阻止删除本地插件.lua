@@ -30,6 +30,7 @@ local function preventRemoveFiles(w2l)
 end
 
 function mt:on_convert(w2l)
+    -- 输出模式
     if w2l.setting.mode ~= 'lni' then
         return
     end
