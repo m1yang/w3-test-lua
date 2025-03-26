@@ -44,18 +44,15 @@ local function importFiles(w2l)
 end
 
 local function isOpenByYDWE(w2l)
+    -- 输入文件模式
     if w2l.input_mode ~= 'lni' then
         return false
     end
+    -- 输出模式
     if w2l.setting.mode ~= 'obj' then
         return false
     end
-    for _, plugin in ipairs(w2l.plugins) do
-        if plugin.info.name == '日志路径' then
-            return true
-        end
-    end
-    return false
+    return true
 end
 
 local function removePlugin(w2l)

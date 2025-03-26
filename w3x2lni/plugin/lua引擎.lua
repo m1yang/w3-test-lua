@@ -59,12 +59,7 @@ local function isOpenByYDWE(w2l)
     if w2l.setting.mode ~= 'obj' then
         return false
     end
-    for _, plugin in ipairs(w2l.plugins) do
-        if plugin.info.name == '日志路径' then
-            return true
-        end
-    end
-    return false
+    return true
 end
 
 local function preventImportLua(w2l)
