@@ -38,20 +38,7 @@ local function convertLua(data)
     return table.concat(lines, '\r\n')
 end
 
-local function isOpenByYDWE(w2l)
-    if w2l.input_mode ~= 'lni' then
-        return false
-    end
-    if w2l.setting.mode ~= 'obj' then
-        return false
-    end
-    return true
-end
-
 function mt:on_convert(w2l)
-    if isOpenByYDWE(w2l) then
-        return
-    end
     if w2l.setting.mode == 'lni' then
         return
     end

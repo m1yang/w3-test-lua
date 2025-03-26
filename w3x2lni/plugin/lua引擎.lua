@@ -52,16 +52,6 @@ local function injectFiles(w2l)
     end
 end
 
-local function isOpenByYDWE(w2l)
-    if w2l.input_mode ~= 'lni' then
-        return false
-    end
-    if w2l.setting.mode ~= 'obj' then
-        return false
-    end
-    return true
-end
-
 local function preventImportLua(w2l)
     local file_save = w2l.file_save
     function w2l:file_save(type, name, buf)
@@ -73,10 +63,6 @@ local function preventImportLua(w2l)
 end
 
 function mt:on_full(w2l)
-    if isOpenByYDWE(w2l) then
-        preventImportLua(w2l)
-        return
-    end
     if w2l.setting.remove_we_only then
         injectFiles(w2l)
     else

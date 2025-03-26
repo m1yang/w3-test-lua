@@ -8,6 +8,7 @@
 set we=path\to\we
 set w3x2lni=path\to\w3x2lni
 ```
+编辑器的插件环境不一样
 
 编辑器打开地图时
 输入格式：Lni
@@ -19,7 +20,7 @@ set w3x2lni=path\to\w3x2lni
 输入格式：Mpq
 输出模式：lni
 使用的插件:
-[输出引用的对象](本地) - slk时输出被引用的对象列表 - used_ids.txt
+[输出引用的对象](本地) - slk时输出被引用的对象列表
 [阻止删除本地插件]
 
 编辑器保存时 第二次
@@ -28,16 +29,3 @@ set w3x2lni=path\to\w3x2lni
 使用的插件:
 [输出引用的对象](本地) - slk时输出被引用的对象列表
 [阻止删除本地插件]
-
-编辑器保存就会报错
-插件[阻止删除本地插件]执行失败 - .\backend\plugin.lua:12: bad argument #1 to 'load' (function expected, got nil)
-stack traceback:
-        [C]: in function 'load'
-        .\backend\plugin.lua:12: in function <.\backend\plugin.lua:10>
-        [C]: in function 'xpcall'
-        .\backend\plugin.lua:10: in upvalue 'load_plugins'
-        .\backend\plugin.lua:37: in function 'backend.plugin'
-        .\backend\convert.lua:120: in function 'backend.convert'
-        .\backend\cli\lni.lua:4: in function 'backend.cli.lni'
-        backend\init.lua:12: in main chunk
-        [C]: in ?
